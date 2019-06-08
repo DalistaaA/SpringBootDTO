@@ -52,4 +52,19 @@ public class ProjectDtoMapper {
 		List<ProjectDto> getpr= new ModelMapper().map(project, listType);
 		return getpr;
 	}
+	
+	public ProjectDto deleteProject(int projectId) {
+		projectService.deleteProjectById(projectId);
+		return null;
+	}
+	
+//	public ProjectDtoMapper getOneProject(int projectId) {
+//		return EntityToDTO(projectService.getProjectById(projectId));
+////		projectService.getProjectById(projectId);
+//		}
+	
+	public void updateProjects(ProjectDto projectDto) {
+		Project project = modelmapper.map(projectDto, Project.class);
+		EntityToDTO(projectService.updateProject(project));
+	}
 }

@@ -9,4 +9,12 @@ public interface ProjectService {
 	Project saveProject(Project project);
 
 	List<Project> getProjects();
+	
+	Project getProjectById(int projectId);
+	
+	void deleteProjectById(int projectId);
+	
+	Project updateProject(Project project);
 }
+
+

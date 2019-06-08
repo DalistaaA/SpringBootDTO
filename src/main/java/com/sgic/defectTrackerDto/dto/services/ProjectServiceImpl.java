@@ -24,4 +24,31 @@ public class ProjectServiceImpl implements ProjectService {
 		return projectRepository.findAll();
 	}
 
+	@Override
+	public Project getProjectById(int projectId) {
+		return projectRepository.findProjectByProjectId(projectId);
+	}
+
+	@Override
+	public void deleteProjectById(int projectId) {
+		projectRepository.deleteById(projectId);
+		
+	}
+
+	@Override
+	public Project updateProject(Project project) {
+		return projectRepository.save(project);
+	}
+
+//	@Override
+//	public Project updateProject(Project project) {
+//		int projectId = project.getProjectId();
+//		boolean isExist = projectRepository.findProjectByProjectId(projectId) !=null;
+//		if(isExist) {
+//			return projectRepository.save(project);
+//		}
+//	}
+
+	
+
 }
